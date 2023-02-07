@@ -4,7 +4,7 @@ const github = require('@actions/github');
 try {
   // `who-to-greet` input defined in action metadata file
   const testStatus = core.getInput('test-status');
-  if(testStatus === False){
+  if(testStatus === false){
     console.log("The Test failed!");
     return;
   }
