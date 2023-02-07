@@ -9,4 +9,4 @@ jobs:
         id: hello
         uses: AdamNJG/CI-Action@v1.4
         with:
-          test-status: 0
+          test-status: 1
