@@ -5,9 +5,10 @@ try {
   const buildStatus = core.getInput('build-status');
 
   if(buildStatus.status === 'passed'){
-    return 'test passed!';
+    console.log('test passed!');
+    return;
   }
-  return 'test failed'
+  console.log('test failed');
 } catch (error) {
   core.setFailed(error.message);
 }
