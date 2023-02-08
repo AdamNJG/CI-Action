@@ -9779,8 +9779,9 @@ const github = __nccwpck_require__(6738);
 
 try {
   const buildStatus = core.getInput('build-status');
+  const buildObject = JSON.parse(buildStatus);
 
-  if(buildStatus.status === 'passed'){
+  if(buildObject.status === 'passed'){
     console.log('test passed!');
     return;
   }

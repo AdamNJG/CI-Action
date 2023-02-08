@@ -3,8 +3,9 @@ const github = require('@actions/github');
 
 try {
   const buildStatus = core.getInput('build-status');
+  const buildObject = JSON.parse(buildStatus);
 
-  if(buildStatus.status === 'passed'){
+  if(buildObject.status === 'passed'){
     console.log('test passed!');
     return;
   }
