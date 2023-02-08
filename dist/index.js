@@ -9784,7 +9784,7 @@ try {
 
   console.log(buildObject.success);
 
-  if(buildObject.success === 'passed'){
+  if(buildObject.success === true){
     console.log('test passed!');
     return;
   }
