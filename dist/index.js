@@ -9776,13 +9776,12 @@ var __webpack_exports__ = {};
 (() => {
 const core = __nccwpck_require__(1006);
 const github = __nccwpck_require__(6738);
+const fs = __nccwpck_require__(7147);
 
 try {
-  var fileReader = new FileReader();
-  const buildStatus = fileReader.readAsText(core.getInput('build-status'));
+  const buildStatus = fs.readFileSync(core.getInput('build-status'));
 
   console.log("json: " +buildStatus);
-  console.log("status1: " +buildStatus.status);
   const buildObject = JSON.parse(buildStatus);
   console.log("status2: " +buildObject.status);
 

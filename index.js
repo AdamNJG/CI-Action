@@ -1,12 +1,11 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
+const fs = require('fs');
 
 try {
-  var fileReader = new FileReader();
-  const buildStatus = fileReader.readAsText(core.getInput('build-status'));
+  const buildStatus = fs.readFileSync(core.getInput('build-status'));
 
   console.log("json: " +buildStatus);
-  console.log("status1: " +buildStatus.status);
   const buildObject = JSON.parse(buildStatus);
   console.log("status2: " +buildObject.status);
 
