@@ -9778,9 +9778,12 @@ const core = __nccwpck_require__(1006);
 const github = __nccwpck_require__(6738);
 
 try {
-  // `who-to-greet` input defined in action metadata file
-  const testStatus = core.getInput('test-status');
-  console.log(Boolean(testStatus))
+  const buildStatus = core.getInput('build-status');
+
+  if(buildStatus.status === 'passed'){
+    return 'test passed!';
+  }
+  return 'test failed'
 } catch (error) {
   core.setFailed(error.message);
 }

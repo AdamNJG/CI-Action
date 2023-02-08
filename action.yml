@@ -1,13 +1,10 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
-  test-status:  # id of input
-    description: 'status of tests'
+  build-status: 
+    description: 'status of test or build'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+    default: '1'
 runs:
   using: 'node16'
   main: 'dist/index.js'
