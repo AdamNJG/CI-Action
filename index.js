@@ -1,11 +1,9 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const fetch = require('node-fetch');
 
 try {
-  const buildStatus = '';
-  fetch(core.getInput('build-status'))
-    .then((result) => buildStatus = result);
+  var fileReader = new FileReader();
+  const buildStatus = fileReader.readAsText(core.getInput('build-status'));
 
   console.log("json: " +buildStatus);
   console.log("status1: " +buildStatus.status);
