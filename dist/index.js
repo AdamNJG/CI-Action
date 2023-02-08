@@ -9780,12 +9780,11 @@ const fs = __nccwpck_require__(7147);
 
 try {
   const buildStatus = fs.readFileSync(core.getInput('build-status'));
-
-  console.log("json: " +buildStatus);
   const buildObject = JSON.parse(buildStatus);
-  console.log("status2: " +buildObject.status);
 
-  if(buildObject.status === 'passed'){
+  console.log(buildObject.success);
+
+  if(buildObject.success === 'passed'){
     console.log('test passed!');
     return;
   }
