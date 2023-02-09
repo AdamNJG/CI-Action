@@ -7,6 +7,6 @@ jobs:
     steps:
       - name: Did the test pass
         id: hello
-        uses: AdamNJG/CI-Action@v1.5
+        uses: AdamNJG/CI-Action@v1
         with:
           test-status: 0
